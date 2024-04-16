@@ -1,57 +1,69 @@
 :root {
-  --primary-text-color: #121417;
-  --secondary-text-color: #3470ff;
-  --button-active: #0b44cd;
+    --primary-text-color: #121417;
+    --secondary-text-color: #3470ff;
+    --button-active: #0b44cd;
 }
 
 .header {
-  background-color: white;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: fixed;
-  z-index: 1;
-  height: 60px;
-  width: 100vw;
-  justify-content: center;
-  border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 41px;
+    left: 33px;
+    height: 100vh;
+    width: 306px;
+    border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
 }
 
 .links {
-  position: absolute;
-  top: 21px;
-  left: 30px;
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 30px;
-  color: var(--primary-text-color);
+    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    color: var(--primary-text-color);
+}
+
+.svg {
+    fill: #9197b3;
+}
+
+.svg:active {
+    fill: #5932ea;
 }
 
 .toLink {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 10px;
-  font-size: 18px;
-  text-decoration: none;
-  text-transform: capitalize;
-  cursor: pointer;
+    display: flex;
+    text-decoration: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #9197b3;
 }
 
 .toLink:hover,
 .toLink:focus,
 .toLink:active {
-  color: var(--secondary-text-color);
-  transition: all 0.3s allow-discrete;
+    background: #5932ea;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #fff;
+    transition: all 0.3s allow-discrete;
+    border-radius: 8px;
+    width: 250px;
+    height: 46px;
+    fill: #5932ea;
 }
 
 .mainTit {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
 }
 
 .mainTitle {
-  font-size: 36px;
-  color: var(--primary-text-color);
+    font-size: 36px;
+    color: var(--primary-text-color);
 }

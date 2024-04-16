@@ -7,7 +7,6 @@ import Layout from 'components/Layout/Layout';
 import Page404 from 'pages/Page404/Page404';
 import css from './App.module.css';
 
-import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 import * as ROUTES from '../constants/routes';
 
 const appRoutes = [
@@ -28,16 +27,11 @@ const appRoutes = [
     path: ROUTES.ERROR_ROUTE,
     element: <Page404 />,
   },
-  {
-    path: ROUTES.NOTFOUNDPPAGE_ROUTE,
-    element: <NotFoundPage />,
-  },
 ];
 export const App = () => {
   return (
     <Layout className={css.layout}>
       <Routes>
-        <Route path="*" element={<NotFoundPage />} />
         {appRoutes.map(({ path, element }) => (
           <Route key={path} path={path} element={element} />
         ))}

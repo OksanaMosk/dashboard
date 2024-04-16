@@ -8,8 +8,6 @@ import {
 } from '../../redux/favorites/favorites.reducer';
 import ModalWindow from '../ModalWindow/ModalWindow';
 
-import noFavor from '../../images/noFavor.png';
-import favor from '../../images/favor.png';
 import css from './CarElement.module.css';
 
 export const CarElement = ({
@@ -111,7 +109,6 @@ export const CarElement = ({
       >
         <img
           className={isFavorite ? css.favorIcon : css.noFavorIcon}
-          src={isFavorite ? favor : noFavor}
           alt="favorite"
           width={18}
           height={16}

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import Close from '../../images/delete.png';
+
 import css from './ModalWindow.module.css';
 import Backdrop from '../Backdrop/Backdrop';
 import { createPortal } from 'react-dom';
@@ -65,9 +65,7 @@ export default function ModalWindow({
       >
         <div>
           <div className={css.modaC}>
-            <button className={css.closeIcon} onClick={onClose}>
-              <img src={Close} alt="Close button" width={24} height={24} />
-            </button>
+            <button className={css.closeIcon} onClick={onClose}></button>
             <img
               src={img}
               alt={make}
