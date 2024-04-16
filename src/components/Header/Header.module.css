@@ -1,69 +1,74 @@
 :root {
-    --primary-text-color: #121417;
-    --secondary-text-color: #3470ff;
-    --button-active: #0b44cd;
+  --primary-text-color: #121417;
+  --secondary-text-color: #3470ff;
+  --button-active: #0b44cd;
 }
 
 .header {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    position: fixed;
-    top: 41px;
-    left: 33px;
-    height: 100vh;
-    width: 306px;
-    border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: fixed;
+  top: 41px;
+  left: 33px;
+  height: 100vh;
+  width: 306px;
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
 }
 
 .links {
-    flex-direction: column;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 30px;
-    color: var(--primary-text-color);
+  flex-direction: column;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  color: var(--primary-text-color);
 }
 
 .svg {
-    fill: #9197b3;
+  fill: none;
+  stroke: #9197b3;
 }
 
-.svg:active {
-    fill: #5932ea;
+.toLink:active .svg,
+.toLink:focus .svg,
+.toLink:hover .svg {
+  fill: none;
+  stroke: white;
 }
 
 .toLink {
-    display: flex;
-    text-decoration: none;
-    text-transform: capitalize;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-    color: #9197b3;
+  display: flex;
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #9197b3;
 }
 
 .toLink:hover,
 .toLink:focus,
 .toLink:active {
-    background: #5932ea;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-    color: #fff;
-    transition: all 0.3s allow-discrete;
-    border-radius: 8px;
-    width: 250px;
-    height: 46px;
-    fill: #5932ea;
+  background: #5932ea;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: #fff;
+  transition: all 0.3s allow-discrete;
+  border-radius: 8px;
+  width: 250px;
+  height: 46px;
+  fill: white;
+  stroke: white;
 }
 
 .mainTit {
-    display: flex;
+  display: flex;
 }
 
 .mainTitle {
-    font-size: 36px;
-    color: var(--primary-text-color);
+  font-size: 36px;
+  color: var(--primary-text-color);
 }

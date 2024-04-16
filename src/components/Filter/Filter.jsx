@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import makes from '../../json/makes.json';
+import makes from '../../json/customers';
 
 import css from './Filter.module.css';
 

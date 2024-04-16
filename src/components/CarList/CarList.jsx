@@ -1,13 +1,16 @@
 import React from 'react';
-import { CarElement } from '../CarElement/CarElement';
+import { CustomerElement } from '../CarElement/CarElement';
 import css from './CarList.module.css';
 
-export const CarList = ({ cars }) => {
+import customerData from '../../json/customers';
+
+console.log(customerData);
+export const CarList = () => {
   return (
     <div className={css.homeContainer}>
       <ul className={css.homeList}>
-        {cars.map(car => (
-          <CarElement key={car.id} {...car} />
+        {customerData.map(customer => (
+          <CustomerElement key={customer.id} {...customer} />
         ))}
       </ul>
     </div>

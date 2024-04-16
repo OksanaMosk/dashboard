@@ -1,6 +1,7 @@
 export const HOME_ROUTE = '/';
-export const FAVORITES_ROUTE = '/favorites';
-export const CATALOG_ROUTE = '/catalog';
-
-export const ERROR_ROUTE = '/cars/404';
-export const NOTFOUNDPPAGE_ROUTE = '/404';
+export const PRODUCT_ROUTE = '/product';
+export const CUSTOMERS_ROUTE = '/customers';
+export const INCOME_ROUTE = '/income';
+export const PROMOTE_ROUTE = '/promote';
+export const HELP_ROUTE = '/help';
+export const ERROR_ROUTE = '/404';
