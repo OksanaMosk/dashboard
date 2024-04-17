@@ -17,14 +17,20 @@ export const CustomerElement = ({
       <td>{Phone}</td>
       <td>{Email}</td>
       <td>{Country}</td>
-      <td className={`${Status === 'Active' ? css.active : css.inactive}`}>
-        {Status === 'Active' ? (
-          <a href={`mailto:${Email}`} target="_blank" rel="noopener noreferrer">
-            {Status}
-          </a>
-        ) : (
-          Status
-        )}
+      <td>
+        <span className={Status === 'Active' ? css.active : css.inactive}>
+          {Status === 'Active' ? (
+            <a
+              href={`mailto:${Email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {Status}
+            </a>
+          ) : (
+            Status
+          )}
+        </span>
       </td>
     </tr>
   );

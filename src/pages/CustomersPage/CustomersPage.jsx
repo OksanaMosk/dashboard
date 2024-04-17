@@ -13,8 +13,7 @@ const CustomersPage = () => {
 
   return (
     <div className={css.pageContainer}>
-      <h1>Hello Evano 👋🏼,</h1>
-
+      <h1 className={css.customersTitle}>Hello Evano 👋🏼,</h1>
       <CarList currentPage={currentPage} onPageChange={handlePageChange} />
     </div>
   );

@@ -57,8 +57,13 @@ export const CarList = () => {
 
   return (
     <div className={css.homeContainer}>
-      <form>
+      <h2 className={css.titleAllCustomers}>All Customers</h2>
+      <h3 className={css.titleMembers} onClick={toggleShowOnlyActive}>
+        {showOnlyActive ? 'All Members' : 'Active Members'}
+      </h3>
+      <form className={css.form}>
         <svg
+          className={css.searchSvg}
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -82,24 +87,19 @@ export const CarList = () => {
         </svg>
 
         <input
+          className={css.input}
           type="text"
           placeholder="Search"
           value={searchTerm}
           onChange={handleInputChange}
         />
       </form>
-
-      <h2>All Customers</h2>
-      <h3 onClick={toggleShowOnlyActive}>
-        {showOnlyActive ? 'All Members' : 'Active Members'}
-      </h3>
-
       <table className={css.homeTable}>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Customer Name</th>
             <th>Company</th>
-            <th>Phone</th>
+            <th>Phone Number</th>
             <th>Email</th>
             <th>Country</th>
             <th>Status</th>
@@ -121,7 +121,14 @@ export const CarList = () => {
       <ul className={css.pagination}>
         <li>
           <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-            Previous
+            <svg
+              width="5"
+              height="7"
+              viewBox="0 0 5 7"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M2.936 6.392L0.176 3.668L2.936 0.944H4.664L1.892 3.668L4.664 6.392H2.936Z" />
+            </svg>
           </button>
         </li>
         {Array.from({ length: totalPages }, (_, i) => (
@@ -134,7 +141,14 @@ export const CarList = () => {
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
           >
-            Next
+            <svg
+              width="5"
+              height="7"
+              viewBox="0 0 5 7"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0.344 0.944H2.072L4.832 3.668L2.072 6.392H0.344L3.116 3.668L0.344 0.944Z" />
+            </svg>
           </button>
         </li>
       </ul>

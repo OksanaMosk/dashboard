@@ -10,24 +10,33 @@
   flex-direction: column;
   cursor: pointer;
   position: fixed;
-  top: 41px;
-  left: 33px;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 306px;
-  border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
 }
 
 .links {
   flex-direction: column;
   display: flex;
   flex-wrap: nowrap;
-  gap: 30px;
-  color: var(--primary-text-color);
+  gap: 18px;
+  padding-left: 39px;
 }
 
 .svg {
   fill: none;
   stroke: #9197b3;
+}
+
+svg {
+  padding-right: 14px;
+  padding-left: 11px;
+}
+
+.secondsvg {
+  position: absolute;
+  padding-left: 225px;
 }
 
 .toLink:active .svg,
@@ -39,6 +48,9 @@
 
 .toLink {
   display: flex;
+  width: 250px;
+  height: 46px;
+  align-items: center;
   text-decoration: none;
   text-transform: capitalize;
   cursor: pointer;
@@ -54,9 +66,7 @@
   background: #5932ea;
   font-weight: 500;
   font-size: 14px;
-  letter-spacing: -0.01em;
   color: #fff;
-  transition: all 0.3s allow-discrete;
   border-radius: 8px;
   width: 250px;
   height: 46px;
@@ -66,9 +76,54 @@
 
 .mainTit {
   display: flex;
+  margin: 36px auto 64px 28px;
+}
+
+.mainTit img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTit p {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: -0.01em;
+  color: #838383;
+  padding-bottom: 6px;
+  padding-left: 4px;
 }
 
 .mainTitle {
-  font-size: 36px;
-  color: var(--primary-text-color);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: 0.01em;
+  color: #000;
+  padding-left: 8px;
+}
+
+.autorName {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 76px;
+  left: 28px;
+}
+.autorName img {
+  padding-right: 12px;
+}
+.name {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: #000;
+}
+
+.nameAbout {
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  color: #757575;
 }

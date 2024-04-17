@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import logo from '../../images/logo.png';
+import Evano from '../../images/Evano.png';
 
 import css from './Header.module.css';
 
@@ -10,6 +11,7 @@ export const Header = () => {
       <div className={css.mainTit}>
         <img src={logo} alt="logo" style={{ width: '37px', height: '37px' }} />
         <h1 className={css.mainTitle}>Dashboard</h1>
+        <p>v.01</p>
       </div>
       <div className={css.links}>
         <NavLink className={css.toLink} to="/">
@@ -50,7 +52,7 @@ export const Header = () => {
           </svg>
           Dashboard
           <svg
-            className={css.svg}
+            className={`${css.svg} ${css.secondsvg}`}
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -93,7 +95,7 @@ export const Header = () => {
           </svg>
           Product
           <svg
-            className={css.svg}
+            className={`${css.svg} ${css.secondsvg}`}
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -127,7 +129,7 @@ export const Header = () => {
           </svg>
           Customers
           <svg
-            className={css.svg}
+            className={`${css.svg} ${css.secondsvg}`}
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -184,7 +186,7 @@ export const Header = () => {
           </svg>
           Income
           <svg
-            className={css.svg}
+            className={`${css.svg} ${css.secondsvg}`}
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -226,7 +228,7 @@ export const Header = () => {
           </svg>
           Promote
           <svg
-            className={css.svg}
+            className={`${css.svg} ${css.secondsvg}`}
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -264,7 +266,7 @@ export const Header = () => {
           </svg>
           Help
           <svg
-            className={css.svg}
+            className={`${css.svg} ${css.secondsvg}`}
             width="16"
             height="16"
             viewBox="0 0 16 16"
@@ -279,6 +281,17 @@ export const Header = () => {
             />
           </svg>
         </NavLink>
+      </div>
+      <div className={css.autorName}>
+        <img
+          src={Evano}
+          alt="Evano"
+          style={{ width: '42px', height: '42px' }}
+        />
+        <div>
+          <h4 className={css.name}>Evano</h4>
+          <p className={css.nameAbout}>Project Manager</p>
+        </div>
       </div>
     </div>
   );
