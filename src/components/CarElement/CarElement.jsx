@@ -11,12 +11,21 @@ export const CustomerElement = ({
   Status,
 }) => {
   return (
-    <li className={css.customer} key={id}>
-      <p>{Name}</p>
-      <p>{Company}</p> <p>{Phone}</p>
-      <p>{Email}</p>
-      <p>{Country}</p>
-      <p>{Status}</p>
-    </li>
+    <tr className={css.customer} key={id}>
+      <td>{Name}</td>
+      <td>{Company}</td>
+      <td>{Phone}</td>
+      <td>{Email}</td>
+      <td>{Country}</td>
+      <td className={`${Status === 'Active' ? css.active : css.inactive}`}>
+        {Status === 'Active' ? (
+          <a href={`mailto:${Email}`} target="_blank" rel="noopener noreferrer">
+            {Status}
+          </a>
+        ) : (
+          Status
+        )}
+      </td>
+    </tr>
   );
 };
