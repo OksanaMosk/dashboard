@@ -93,7 +93,7 @@
   flex-direction: column;
   display: flex;
   flex-wrap: nowrap;
-  gap: 8px;
+  gap: 2px;
   align-items: center;
   justify-content: center;
 }

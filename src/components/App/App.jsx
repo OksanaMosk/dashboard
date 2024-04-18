@@ -7,7 +7,6 @@ import IncomePage from 'pages/IncomePage/IncomePage';
 import PromotePage from 'pages/PromotePage/PromotePage';
 import HelpPage from 'pages/HelpPage/HelpPage';
 
-import Page404 from 'pages/Page404/Page404';
 import css from './App.module.css';
 
 import * as ROUTES from '../constants/routes';
@@ -36,10 +35,6 @@ const appRoutes = [
   {
     path: ROUTES.HELP_ROUTE,
     element: <HelpPage />,
-  },
-  {
-    path: ROUTES.ERROR_ROUTE,
-    element: <Page404 />,
   },
 ];
 export const App = () => {

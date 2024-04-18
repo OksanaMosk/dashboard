@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import { CarList } from 'components/CarList/CarList';
+import { CarList } from 'components/CustomerList/CustomerList';
 
 import css from './CustomersPage.module.css';
 

@@ -1,10 +1,8 @@
-import { NavLink } from 'react-router-dom';
-
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../../images/logo.png';
 import close from '../../images/close.png';
-
 import Evano from '../../images/Evano.png';
 
 import css from './Header.module.css';

@@ -1,5 +1,6 @@
 import React from 'react';
-import css from './CarElement.module.css';
+
+import css from './CustomerElement.module.css';
 
 export const CustomerElement = ({
   id,

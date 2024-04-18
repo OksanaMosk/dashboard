@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { CustomerElement } from '../CarElement/CarElement';
-import css from './CarList.module.css';
-
+import { CustomerElement } from '../CustomerElement/CustomerElement';
 import customerData from '../../json/customers';
 
-console.log(customerData);
+import css from './CustomerList.module.css';
 
 export const CarList = () => {
   const [showOnlyActive, setShowOnlyActive] = useState(false);
