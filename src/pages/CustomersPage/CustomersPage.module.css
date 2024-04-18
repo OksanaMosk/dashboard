@@ -1,16 +1,16 @@
 .pageContainer {
-    margin-left: 305px;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    height: 100%;
-    overflow: auto;
-    background: #fafbff;
+  margin-left: 305px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100vh;
+  overflow: auto;
+  background: #fafbff;
 }
 
 .customersTitle {
-    margin: 41px auto 51px 76px;
-    font-weight: 500;
-    font-size: 24px;
-    color: #000;
+  margin: 41px auto 51px 76px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #000;
 }
