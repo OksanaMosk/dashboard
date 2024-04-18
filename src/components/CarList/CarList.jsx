@@ -55,6 +55,64 @@ export const CarList = () => {
     }
   };
 
+  const renderPageButtons = () => {
+    const pageButtons = [];
+
+    const maxButtonsToShow = 4;
+
+    let startPage;
+    let endPage;
+
+    if (totalPages <= maxButtonsToShow) {
+      startPage = 1;
+      endPage = totalPages;
+    } else if (currentPage <= Math.ceil(maxButtonsToShow / 2)) {
+      startPage = 1;
+      endPage = maxButtonsToShow;
+    } else if (currentPage + Math.floor(maxButtonsToShow / 2) >= totalPages) {
+      startPage = totalPages - maxButtonsToShow + 1;
+      endPage = totalPages;
+    } else {
+      startPage = currentPage - Math.floor(maxButtonsToShow / 2 - 1);
+      endPage = currentPage + Math.ceil(maxButtonsToShow / 2) - 1;
+    }
+
+    if (startPage > 1) {
+      pageButtons.push(
+        <li key={1}>
+          <button onClick={() => paginate(1)}>1</button>
+        </li>
+      );
+      if (startPage > 2) {
+        pageButtons.push(<li key="dots-start">...</li>);
+      }
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pageButtons.push(
+        <li
+          key={i}
+          className={`${css.pageNumber} ${i === currentPage ? css.active : ''}`}
+        >
+          <button onClick={() => paginate(i)}>{i}</button>
+        </li>
+      );
+    }
+
+    if (endPage < totalPages) {
+      if (endPage < totalPages - 1) {
+        pageButtons.push(<li key="dots-end">...</li>);
+      }
+      pageButtons.push(
+        <li key={totalPages}>
+          <button onClick={() => paginate(totalPages)}>{totalPages}</button>
+        </li>
+      );
+    }
+
+    return pageButtons;
+  };
+
   return (
     <div className={css.homeContainer}>
       <h2 className={css.titleAllCustomers}>All Customers</h2>
@@ -67,19 +125,16 @@ export const CarList = () => {
           width="24"
           height="24"
           viewBox="0 0 24 24"
-          fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-            stroke="#7E7E7E"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
           <path
             d="M21 21L16.65 16.65"
-            stroke="#7E7E7E"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -117,41 +172,45 @@ export const CarList = () => {
           )}
         </tbody>
       </table>
-
-      <ul className={css.pagination}>
-        <li>
-          <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-            <svg
-              width="5"
-              height="7"
-              viewBox="0 0 5 7"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M2.936 6.392L0.176 3.668L2.936 0.944H4.664L1.892 3.668L4.664 6.392H2.936Z" />
-            </svg>
-          </button>
-        </li>
-        {Array.from({ length: totalPages }, (_, i) => (
-          <li key={i + 1} className={i + 1 === currentPage ? css.active : ''}>
-            <button onClick={() => paginate(i + 1)}>{i + 1}</button>
+      <div className={css.paginationAbout}>
+        <p className={css.about}>
+          Showing data {(currentPage - 1) * itemsPerPage + 1} to{' '}
+          {Math.min(currentPage * itemsPerPage, filteredCustomerData.length)} of{' '}
+          {filteredCustomerData.length} entries
+        </p>
+        <ul className={css.pagination}>
+          <li>
+            <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+              <svg
+                className={css.paginationSvg}
+                width="5"
+                height="7"
+                viewBox="0 0 5 7"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2.936 6.392L0.176 3.668L2.936 0.944H4.664L1.892 3.668L4.664 6.392H2.936Z" />
+              </svg>
+            </button>
           </li>
-        ))}
-        <li>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-          >
-            <svg
-              width="5"
-              height="7"
-              viewBox="0 0 5 7"
-              xmlns="http://www.w3.org/2000/svg"
+          {renderPageButtons()}
+          <li>
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
             >
-              <path d="M0.344 0.944H2.072L4.832 3.668L2.072 6.392H0.344L3.116 3.668L0.344 0.944Z" />
-            </svg>
-          </button>
-        </li>
-      </ul>
+              <svg
+                className={css.paginationSvg}
+                width="5"
+                height="7"
+                viewBox="0 0 5 7"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0.344 0.944H2.072L4.832 3.668L2.072 6.392H0.344L3.116 3.668L0.344 0.944Z" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
